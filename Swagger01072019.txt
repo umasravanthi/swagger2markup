@@ -1,0 +1,2184 @@
+openapi: 3.0.1
+info:
+  title: API Documentation
+  description: defaultDeription
+  version: "1.0.0-oas3"
+servers:
+  - url: 'https://0812dce4.ngrok.io'
+paths:
+  /8APi/Userlogin:
+    post:
+      tags:
+        - Login
+      description: >-
+        Login the user  to get the access token. The returned Access token
+        should be pasased in the header in all the further API calls  with the
+        key “AccessToken” as header parameter.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      password:
+                        type: string
+                      CompanyId:
+                        type: integer
+                      Username:
+                        type: string
+                      DeveloperId:
+                        type: string
+                message:
+                  type: string
+            examples:
+              '0':
+                value: |
+                  {
+                    "data": [
+                      {
+                        "Username":"su",
+                        "password": "su",
+                        "CompanyId": 72,
+                        "DeveloperId" : "H3jLzl3ilZU="
+                      }
+                    ],
+                    "result": 1,
+                    "message": ""
+                  }
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        AccessToken:
+                          type: string
+                  message:
+                    type: string
+              examples: {}
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/List/Transactions:
+    get:
+      tags:
+        - Transactions
+      description: To get the List of Transactions
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        VoucherType:
+                          type: string
+                        VoucherOrder:
+                          type: string
+                        Inventory:
+                          type: string
+                        PostExchangeRateDiff:
+                          type: string
+                        DefAcc__Code:
+                          type: string
+                        MenuGroupId:
+                          type: string
+                        InputExchangeRate:
+                          type: string
+                        Abbr:
+                          type: string
+                        LinkSeq:
+                          type: string
+                  message:
+                    type: string
+              examples: {}
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  '/8API/Screen/Masters/Core__Account/{Code}':
+    get:
+      tags:
+        - Masters
+      description: >-
+        the method returns the “JEC” master with field data from the “Account”
+        Master
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+          
+        - name: Code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful opeartion
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        iAccountType:
+                          type: integer
+                        iDeliveryCity__Name:
+                          type: string
+                        iCreatedDate:
+                          type: string
+                        Alias:
+                          type: string
+                        iStatus:
+                          type: integer
+                        sCode:
+                          type: string
+                        BinCapacity:
+                          type: integer
+                        iPDCDiscountedAC__Name:
+                          type: string
+                        sName:
+                          type: string
+                  message:
+                    type: string
+              examples: {}
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/List/Transactions/Opening Stocks:
+    get:
+      tags:
+        - Transactions
+      description: To get the particular voucher data
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Suspended:
+                          type: boolean
+                        Created time:
+                          type: string
+                        Voucher No:
+                          type: string
+                        Quantity:
+                          type: string
+                        Date:
+                          type: string
+                        HeaderId:
+                          type: integer
+                        Created by:
+                          type: string
+                        Modified time:
+                          type: string
+                        Modified by:
+                          type: string
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/List/Masters:
+    get:
+      tags:
+        - Masters
+      description: >-
+        This method will return the list of masters along with the field details
+        of the master tag.
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        APIMasterName:
+                          type: boolean
+                        MasterTypeId:
+                          type: integer
+                        Caption:
+                          type: string
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/Masters/Core__Warehouse:
+    post:
+      tags:
+        - Masters
+      description: Saving the particular master data
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      sCode:
+                        type: string
+                      Alias:
+                        type: string
+                      sName:
+                        type: string
+                message:
+                  type: string
+                url:
+                  type: string
+            examples:
+              '0':
+                value: |-
+                  {
+                    "data": [
+                      {
+                        "Alias": "SGW123",
+                        "sName": "SGW123",
+                        "sCode": "SGW123"
+                      }
+                    ],
+                    "result": 1,
+                    "message": "",
+                    "url": "https://0812dce4.ngrok.io/8API/Screen/Masters/Core__Warehouse/SGW"
+                  }
+      responses:
+        '200':
+          description: Succesfull operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        MasterId:
+                          type: integer
+                        VoucherNo:
+                          type: string
+                        Exception:
+                          type: string
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  '/8API/Screen/Transactions/Opening Stocks/{VoucherNo}':
+    get:
+      tags:
+        - Transactions
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+        - name: VoucherNo
+          in: path
+          required: true
+          schema:
+            type: string
+          example: 1
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        body:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              Warehouse__Id:
+                                type: integer
+                              Inventory Allocation Status__Name:
+                                type: string
+                              Product__Id:
+                                type: integer
+                              Description:
+                                type: string
+                              Quantity:
+                                type: integer
+                              Rate:
+                                type: integer
+                              Gross:
+                                type: integer
+                        header:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              DocNo:
+                                type: string
+                              Date:
+                                type: integer
+                              HeaderId:
+                                type: integer
+                        Footer:
+                          type: array
+                          items:
+                            type: object
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/Transactions/Opening Stocks:
+    post:
+      tags:
+        - Transactions
+      description: For saving the Voucher
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Header:
+                        type: object
+                        properties:
+                          HeaderId:
+                            type: integer
+                          Time:
+                            type: string
+                          sNarration:
+                            type: string
+                          DocNo:
+                            type: string
+                          Date:
+                            type: integer
+                      Footer:
+                        type: array
+                        items:
+                          type: string
+                      Body:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            Inventory Allocation Status__Id:
+                              type: integer
+                            Description:
+                              type: string
+                            Product__Alias:
+                              type: string
+                            Unit__Alias:
+                              type: string
+                            Product__Name:
+                              type: string
+                            DefaultStatus:
+                              type: integer
+                            Unit__Id:
+                              type: integer
+                            Inventory Allocation Status__Name:
+                              type: string
+                            Warehouse__Code:
+                              type: string
+                            Batch:
+                              type: object
+                              properties:
+                                ResQuantity:
+                                  type: number
+                                BatchRate:
+                                  type: number
+                                FromReservation:
+                                  type: boolean
+                                BatchId:
+                                  type: integer
+                                Qty:
+                                  type: number
+                                InvTagId:
+                                  type: integer
+                                BatchNo:
+                                  type: string
+                                Value1:
+                                  type: number
+                                Value2:
+                                  type: number
+                                IReservationId:
+                                  type: integer
+                            Unit__Name:
+                              type: string
+                            Inventory Allocation Status__Alias:
+                              type: string
+                            Rate:
+                              type: number
+                            Warehouse__Name:
+                              type: string
+                            Quantity:
+                              type: number
+                            Product__Id:
+                              type: integer
+                            sRemarks:
+                              type: string
+                            TransactionId:
+                              type: integer
+                            Product__Code:
+                              type: string
+                            Bins:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  Item__Id:
+                                    type: integer
+                                  MfgDate:
+                                    type: integer
+                                  AllocTag:
+                                    type: integer
+                                  Unit__Alias:
+                                    type: string
+                                  BatchId:
+                                    type: integer
+                                  Item__Code:
+                                    type: string
+                                  Quantity:
+                                    type: number
+                                  Item__Alias:
+                                    type: string
+                                  Flag:
+                                    type: integer
+                                  Unit__Id:
+                                    type: integer
+                                  Bins__Alias:
+                                    type: string
+                                  Item__Name:
+                                    type: string
+                                  Batch:
+                                    type: string
+                                  Bins__Id:
+                                    type: integer
+                                  ExpDate:
+                                    type: integer
+                                  ItemCapacity:
+                                    type: integer
+                                  SkidId:
+                                    type: integer
+                                  Level:
+                                    type: integer
+                                  Unit__Name:
+                                    type: string
+                                  Bins__Code:
+                                    type: string
+                                  Bins__Name:
+                                    type: string
+                                  Distance:
+                                    type: integer
+                                  Unit__Code:
+                                    type: string
+                            Skid:
+                              type: integer
+                            Warehouse__Id:
+                              type: integer
+                            Warehouse__Alias:
+                              type: string
+                            Gross:
+                              type: number
+                            Inventory Allocation Status__Code:
+                              type: string
+                            Unit__Code:
+                              type: string
+                message: {}
+                url:
+                  type: string
+            examples:
+              '0':
+                value: |-
+                  {
+                    "data": [
+                      {
+                        "Body": [
+                          {
+                            "Warehouse__Id": 2,
+                            "Warehouse__Name": "SGW",
+                            "Warehouse__Code": "SGW",
+                            "Warehouse__Alias": "SGW",
+                            "Inventory Allocation Status__Id": 162,
+                            "Inventory Allocation Status__Name": "170100137",
+                            "Inventory Allocation Status__Code": "170100137",
+                            "Inventory Allocation Status__Alias": "170100137",
+                            "Product__Id": 28051,
+                            "Product__Name": "Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN",
+                            "Product__Code": "628450000038",
+                            "Product__Alias": "Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN",
+                            "Description": "Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN",
+                            "Unit__Id": 1,
+                            "Unit__Name": "PC",
+                            "Unit__Code": "PC",
+                            "Unit__Alias": "PC",
+                            "Quantity": 12.0,
+                            "Rate": 4.0,
+                            "Gross": 48.0,
+                            "Batch": {
+                              "BatchId": 20,
+                              "BatchNo": "444",
+                              "BatchRate": 0.0,
+                              "FromReservation": false,
+                              "InvTagId": 0,
+                              "IReservationId": 0,
+                              "Qty": 12.0,
+                              "ResQuantity": 0.0,
+                              "Value1": 0.0,
+                              "Value2": 0.0
+                            },
+                            "Bins": [
+                              {
+                                "AllocTag": 162,
+                                "Batch": "444",
+                                "BatchId": 20,
+                                "Bins__Id": 23,
+                                "Bins__Name": "A08-3",
+                                "Bins__Code": "A08-3",
+                                "Bins__Alias": "A08-3",
+                                "Distance": 35,
+                                "ExpDate": 0,
+                                "Flag": 0,
+                                "Item__Id": 28051,
+                                "Item__Name": "Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN",
+                                "Item__Code": "628450000038",
+                                "Item__Alias": "Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN",
+                                "ItemCapacity": 0,
+                                "Level": 3,
+                                "MfgDate": 0,
+                                "Quantity": 12.0,
+                                "SkidId": 41062,
+                                "Unit__Id": 1,
+                                "Unit__Name": "PC",
+                                "Unit__Code": "PC",
+                                "Unit__Alias": "PC"
+                              }
+                            ],
+                            "Skid": 0,
+                            "DefaultStatus": 0,
+                            "sRemarks": "",
+                            "TransactionId": 0
+                          }
+                        ],
+                        "Header": {
+                          "DocNo": "",
+                          "Date": 132251905,
+                          "Time": "",
+                          "sNarration": "",
+                          "HeaderId": 0
+                        },
+                        "Footer": []
+                      }
+                    ],
+                    "result": 1,
+                    "message": null,
+                    "url": "https://0812dce4.ngrok.io/8API/Screen/Transactions/Opening%20Stocks/2"
+                  }
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        HeaderId:
+                          type: integer
+                        VoucherNo:
+                          type: string
+                        BodyIds:
+                          type: array
+                          items:
+                            type: integer
+                        TransIds:
+                          type: array
+                          items:
+                            type: integer
+                        Errors:
+                          type: string
+                        Posted:
+                          type: boolean
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/List/Masters/Core__Account:
+    get:
+      tags:
+        - Masters
+      description: >-
+        the method returns the masters list with field data from the “Account”
+        tag.
+      parameters:
+        - name: fields
+          in: query
+          schema:
+            type: string
+          example: sCode%2CiStatus
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sCode:
+                          type: string
+                        iStatus:
+                          type: integer
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  '/8API/Transactions/Opening Stocks/{VoucherNo}':
+    delete:
+      tags:
+        - Transactions
+      description: For Delete the Voucher
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: lbMqgK25vHPk1cEI6rk7QqbJCX+7Hufv7+wu9TmcTV0=
+        - name: VoucherNo
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  '/8API/Masters/Core__TestMaster/{MasterCode}':
+    delete:
+      tags:
+        - Masters
+      description: For delete the Particular master
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: lbMqgK25vHPk1cEI6rk7QqbJCX+7Hufv7+wu9TmcTV0=
+        - name: MasterCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                  message:
+                    type: string
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'
+  /8API/List/Reports:
+    get:
+      tags:
+       - Reports
+      description: To get the list of reports
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0=
+      responses:
+        '200':
+          description: Successfull operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ReportName:
+                          type: string
+                        ReportId:
+                          type: integer
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'    
+  /8API/List/Reports/ReportParameters/Stock Ledger:
+    get:
+      tags:
+       - Reports
+      description: To get the ReportParameters 
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ReportId:
+                          type: integer
+                        LinkId:
+                          type: integer
+                        ReportModule:
+                          type: integer
+                        ReportType:
+                          type: integer
+                        ReportName:
+                          type: string 
+                        SourceType:
+                          type: integer
+                        Parameters:
+                          type: array
+                          items:
+                           type: object
+                           properties:
+                             FieldVariable:
+                              type : string
+                             ControlId:
+                              type : integer
+                             SubParentId:
+                              type : integer
+                             IsDefualt:
+                              type : integer
+                             FieldId:
+                              type : string
+                             FieldName:
+                              type : string
+                        LayoutDtls:
+                           type: array
+                           items:
+                            type: object
+                            properties:
+                              Id: 
+                               type: integer
+                              Name:
+                               type: string
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'    
+  /8API/Screen/Reports/ReportLayouts/Stock Ledger/0:
+    get:
+      tags:
+       - Reports
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Tag:
+                          type: integer
+                        ID:
+                          type: integer
+                        Name:
+                          type: string
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'    
+  /8API/Reports/pagedata:
+    post:
+      tags:
+       - Reports
+      description: To get the Report data 
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0=
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      StartingDate:
+                        type: integer
+                      Masters:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            Name:
+                              type: string
+                      UniqueId:
+                        type: string
+                      EndingDate:
+                        type: integer
+                      CurrentPage:
+                        type: integer
+                      LayoutId:
+                        type: integer
+                      ReportId:
+                        type: string
+                      RowsPerPage:
+                        type: integer
+                      Inputs:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            value:
+                              type: integer
+                      LanguageId:
+                        type: integer
+            examples:
+              '0':
+                value: |
+                  {
+                    "data": [
+                      {
+                        "StartingDate": 132251905,
+                        "LanguageId": 0,
+                        "Masters": [
+                          {
+                            "id": 28053,
+                            "Name": ""
+                          }
+                        ],
+                        "EndingDate": 132318745,
+                        "LayoutId": 9,
+                        "RowsPerPage": 10,
+                        "CurrentPage": 0,
+                        "ReportId": "551",
+                        "Inputs": [
+                          {
+                            "id": "28053",
+                            "value": 0
+                          }
+                        ],
+                        "UniqueId": ""
+                      }
+                    ]
+                  }
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'https://0812dce4.ngrok.io'
+    servers:
+      - url: 'https://0812dce4.ngrok.io'    
+  /8API/List/CreditManagement/DashboardDefinition/Description:
+    get:
+      tags:
+       - Dashboard
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: AccessToken
+          in: header
+          schema:
+            type: string
+          example: hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0=
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Active:
+                          type: string
+                        Description:
+                          type: string
+                        Name:
+                          type: string
+                        UserOrRoleId:
+                          type: string
+                        UserId:
+                          type: string
+                        Default:
+                          type: string
+                        FontHeader:
+                          type: string
+                        DashboardId:
+                          type: string
+                        SetAsDefault:
+                          type: string
+                        FontFooter:
+                          type: string  
+                  message:
+                    type: string
+              examples: {}    
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'    
+  /8API/Screen/Transactions/VoucherTypes:
+    get:
+      tags:
+       - Transactions
+      description: To Get the all VoucherTypes
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        PostExchangeRateDiff:
+                          type: boolean
+                        BatchPick:
+                          type: string
+                        Name:
+                          type: string
+                        Inventory:
+                          type: boolean
+                        DetailedPosting:
+                          type: boolean
+                        VoucherType:
+                          type: integer
+                        UpdateInvCanBeChanged:
+                          type: boolean
+                        CostOfIssueAcc:
+                          type: string
+                        PostVAT:
+                          type: string
+                        RateFormulaBehaviour:
+                          type: string  
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Screen/Transactions/WareHouseStock/{Product}:
+    get:
+      tags:
+       - Transactions
+      description: Stock
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: Product
+          in: path
+          required: true
+          schema:
+            type: string    
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Screen/Transactions/Preferences:
+    get:
+      tags:
+       - Transactions
+      description: To get the all Transaction preferences
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        CheckNegativeStockAction:
+                          type: integer
+                        SellingRate:
+                          type: integer
+                        FaTagId:
+                          type: integer
+                        InvTagId:
+                          type: integer
+                        CheckOverdueBillsAction:
+                          type: integer 
+                        CheckReorderAction:
+                          type: integer
+                        DefCurrency:
+                          type: array
+                          items:
+                           type: object
+                           properties:
+                             CurrencyId:
+                              type : integer
+                             RoundingType:
+                              type : integer
+                             NoofDecimals:
+                              type : integer
+                             Symbol:
+                              type : string
+                             GeneralRoundOff:
+                              type : integer
+                       
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Screen/Transactions/AccountLedgerBalance/Sales:
+    get:
+      tags:
+       - Transactions
+      description: AccountLedgerBalance
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Credit:
+                          type: integer
+                        Debit:
+                          type: integer
+                        OpeningBalance:
+                          type: integer
+                        Balance:
+                          type: integer
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Screen/Transactions/TransactionViews/Sales Orders:
+    get:
+      tags:
+       - Transactions
+      description: TransactionViews
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        View__ID:
+                          type: integer
+                        View__Name:
+                          type: string
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Screen/Transactions/Approvals/{VoucherType}:
+    get:
+      tags:
+       - Alerts & Approvals
+      description: Approvals
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: VoucherType
+          in: path
+          required: true
+          schema:
+            type: string 
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Index:
+                          type: integer
+                        Name:
+                          type: string
+                        Purpose:
+                          type: integer
+                        Code:
+                          type: string  
+                        CreatedDateTime:
+                          type: string
+                        DateTime:
+                          type: string
+                        ScreenId:
+                          type: integer
+                        Status:
+                          type: integer
+                        AlertId:
+                          type: integer
+                        ModuleId:
+                          type: integer
+                        Snooze:
+                          type: string
+                        RecordId:
+                          type: integer
+                        Message:
+                          type: string
+                        Params:
+                          type: integer  
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://3cf66f1e.ngrok.io'
+    servers:
+      - url: 'https://3cf66f1e.ngrok.io'
+  '/8API/Screen/Transactions/StopVouchers/Purchases Orders/{VoucherNo}':
+    get:
+      tags:
+       - Alerts & Approvals
+      description: StopVouchers
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: VoucherNo
+          in: path
+          required: true
+          schema:
+            type: string  
+            example: Pass VoucherNo ex(PurOrd:5) or HeaderId
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type:  array
+                    items:
+                      type: object
+                  message:
+                    type: string
+              examples: {}
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://3cf66f1e.ngrok.io'
+    servers:
+      - url: 'https://3cf66f1e.ngrok.io'
+  /8API/Screen/Transactions/AlertApprovalCount:
+    get:
+      tags:
+       - Alerts & Approvals
+      description: AlertApprovalCount
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        AlertsCount:
+                          type: integer
+                        ApprovalsCount:
+                          type: integer
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://3cf66f1e.ngrok.io'
+    servers:
+      - url: 'https://3cf66f1e.ngrok.io'
+  /8API/Screen/Transactions/Approvals:
+    get:
+      tags:
+       - Alerts & Approvals
+      description: Approvals
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ModuleId:
+                          type: integer
+                        ScreenId:
+                          type: integer
+                        AlertPurpose:
+                          type: string
+                        Count:
+                          type: integer  
+                        ScreenName:
+                          type: string  
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server      
+      servers:
+        - url: 'https://3cf66f1e.ngrok.io'
+    servers:
+      - url: 'https://3cf66f1e.ngrok.io'
+  '/8API/Screen/Transactions/RejectVouchers/Purchases Orders/{VoucherNo}':
+    get:
+      tags:
+       - Alerts & Approvals
+      description: RejectVouchers
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: VoucherNo
+          in: path
+          required: true
+          schema:
+            type: string  
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://3cf66f1e.ngrok.io'
+    servers:
+      - url: 'https://3cf66f1e.ngrok.io'
+  '/8API/Screen/Transactions/AuthorizeVouchers/Purchases Orders/PurOrd:5':
+    get:
+      tags:
+       - Alerts & Approvals
+      description: AuthorizeVouchers
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: VoucherNo
+          in: path
+          required: true
+          schema:
+            type: string  
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'https://3cf66f1e.ngrok.io'
+    servers:
+      - url: 'https://3cf66f1e.ngrok.io'
+  /8API/Transactions/Bins:
+    post:
+      tags:
+        - Transactions
+      description: Bins popup data
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Product__Code:
+                        type: string
+                      Batch:
+                        type: string
+                      Inward:
+                        type: string
+                      PalceItemInward:
+                        type: string
+                      BatchId:
+                        type: integer
+                      AllocationTag:
+                        type: string
+                      Product__Id:
+                        type: integer
+                message: {}
+                url:
+                  type: string
+            examples:
+              '0':
+                value: |
+                  {
+                    "url": "",
+                    "data": [
+                      {
+                        "Batch": "978",
+                        "Product__Code": "628450000434",
+                        "Product__Id": 0,
+                        "BatchId": 0,
+                        "AllocationTag": "17020197",
+                        "Inward": "true",
+                        "PalceItemInward":"1"
+                      }
+                    ],
+                    "result": 0,
+                    "message": null
+                  }
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        BinsDetails:
+                          type: array
+                          items:
+                           type: object
+                           properties:
+                             Distance:
+                              type : integer
+                             Id:
+                              type : integer
+                             FreeSpace:
+                              type : integer
+                             Name:
+                              type : string
+                             Group:
+                              type : integer
+                             Quantity:
+                              type : integer
+                        ProductData:
+                           type: array
+                           items:
+                            type: object
+                            properties:
+                              Id: 
+                               type: integer
+                              Category:
+                               type: integer
+                              BinCapacity:
+                               type: integer 
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server  
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Transactions/NewVoucherNumber:
+    post:
+      tags:
+        - Transactions
+      description: Generating the new voucher number for vouchertype
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      VoucherType:
+                        type: string
+                message: {}
+                url:
+                  type: string
+            examples:
+              '0':
+                value: |
+                  {
+                    "url": "",
+                    "data": [
+                      {
+                        "VoucherType":"Sales Orders"
+                      }
+                    ],
+                    "result": 0,
+                    "message": null
+                  }
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        NewVoucherNumber:
+                          type: string
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Transactions/Batches:
+    post:
+      tags:
+        - Transactions
+      description: batch popup data
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      voucherno:
+                        type: string
+                      invtagid:
+                        type: string
+                      vouchertype:
+                        type: string
+                      product__code:
+                        type: string
+                      voucherdate:
+                        type: string
+                      BatchNo:
+                        type: string
+                message: {}
+                url:
+                  type: string
+            examples:
+              '0':
+                value: |
+                  {
+                    "data": [
+                      {
+                        "voucherno": "2",
+                        "product__code": "628450000434",
+                        "invtagid": "2",
+                        "voucherdate": "132318747",
+                        "vouchertype": "RTS",
+                        "BatchNo":"978"
+                      }
+                    ],
+                    "url": "",
+                    "result": 1,
+                    "message": null
+                  }
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Batches:
+                          type: array
+                          items:
+                           type: object
+                           properties:
+                             BatchId:
+                              type : integer
+                             IsBatchExists:
+                              type : boolean
+                             ExpiryDate:
+                              type : integer
+                             BatchQuntity:
+                              type : integer
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server 
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
+  /8API/Transactions/OptionControlData:
+    post:
+      tags:
+        - Transactions
+      description: Option Control data
+      parameters:
+        - name: AccessToken
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                result:
+                  type: integer
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      iMasterTypeId:
+                        type: string
+                message: {}
+                url:
+                  type: string
+            examples:
+              '0':
+                value: |
+                  {
+                    "url": "",
+                    "data": [{
+                   "iMasterTypeId":"2"
+                    }],
+                    "result": 1,
+                    "message": null
+                  }
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        header:
+                          type: array
+                          items:
+                           type: string
+                           format: "string"
+                           example: [iMasterId, Code^92, Name^101, ProductType^100, MasterId^100]
+                        Body:
+                          type: array
+                          items:
+                           type: string
+                           example: [28047, 628450000014, Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Assorted-NA-MONTEBELLO FLN, 4, 28047]
+                  message:
+                    type: string
+              examples: {}    
+        '403':
+          description: Forbidden - Access to the resource by the provider is forbidden
+        '404':
+          description: Not found - The requested resource is not found
+        '502':
+          description: >-
+            Provider server error - Something went wrong on the Provider or
+            Endpoint’s server
+      servers:
+        - url: 'http://localhost'
+    servers:
+      - url: 'http://localhost'
