@@ -1,0 +1,3185 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "API Documentation",
+    "description" : "defaultDeription",
+    "version" : "1.0.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://0812dce4.ngrok.io"
+  } ],
+  "paths" : {
+    "/8APi/Userlogin" : {
+      "post" : {
+        "tags" : [ "Login" ],
+        "description" : "Login the user  to get the access token. The returned Access token should be pasased in the header in all the further API calls  with the key “AccessToken” as header parameter.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"data\": [\n    {\n      \"Username\":\"su\",\n      \"password\": \"su\",\n      \"CompanyId\": 72,\n      \"DeveloperId\" : \"H3jLzl3ilZU=\"\n    }\n  ],\n  \"result\": 1,\n  \"message\": \"\"\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/Transactions" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "To get the List of Transactions",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Masters/Core__Account/{Code}" : {
+      "get" : {
+        "tags" : [ "Masters" ],
+        "description" : "the method returns the “JEC” master with field data from the “Account” Master",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Code",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful opeartion",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_2"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/Transactions/Opening Stocks" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "To get the particular voucher data",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_3"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/Masters" : {
+      "get" : {
+        "tags" : [ "Masters" ],
+        "description" : "This method will return the list of masters along with the field details of the master tag.",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_4"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Masters/Core__Warehouse" : {
+      "post" : {
+        "tags" : [ "Masters" ],
+        "description" : "Saving the particular master data",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_1"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"data\": [\n    {\n      \"Alias\": \"SGW123\",\n      \"sName\": \"SGW123\",\n      \"sCode\": \"SGW123\"\n    }\n  ],\n  \"result\": 1,\n  \"message\": \"\",\n  \"url\": \"https://0812dce4.ngrok.io/8API/Screen/Masters/Core__Warehouse/SGW\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Succesfull operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_5"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Transactions/Opening Stocks/{VoucherNo}" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        }, {
+          "name" : "VoucherNo",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : 1
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_6"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Transactions/Opening Stocks" : {
+      "post" : {
+        "tags" : [ "Transactions" ],
+        "description" : "For saving the Voucher",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_2"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"data\": [\n    {\n      \"Body\": [\n        {\n          \"Warehouse__Id\": 2,\n          \"Warehouse__Name\": \"SGW\",\n          \"Warehouse__Code\": \"SGW\",\n          \"Warehouse__Alias\": \"SGW\",\n          \"Inventory Allocation Status__Id\": 162,\n          \"Inventory Allocation Status__Name\": \"170100137\",\n          \"Inventory Allocation Status__Code\": \"170100137\",\n          \"Inventory Allocation Status__Alias\": \"170100137\",\n          \"Product__Id\": 28051,\n          \"Product__Name\": \"Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN\",\n          \"Product__Code\": \"628450000038\",\n          \"Product__Alias\": \"Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN\",\n          \"Description\": \"Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN\",\n          \"Unit__Id\": 1,\n          \"Unit__Name\": \"PC\",\n          \"Unit__Code\": \"PC\",\n          \"Unit__Alias\": \"PC\",\n          \"Quantity\": 12.0,\n          \"Rate\": 4.0,\n          \"Gross\": 48.0,\n          \"Batch\": {\n            \"BatchId\": 20,\n            \"BatchNo\": \"444\",\n            \"BatchRate\": 0.0,\n            \"FromReservation\": false,\n            \"InvTagId\": 0,\n            \"IReservationId\": 0,\n            \"Qty\": 12.0,\n            \"ResQuantity\": 0.0,\n            \"Value1\": 0.0,\n            \"Value2\": 0.0\n          },\n          \"Bins\": [\n            {\n              \"AllocTag\": 162,\n              \"Batch\": \"444\",\n              \"BatchId\": 20,\n              \"Bins__Id\": 23,\n              \"Bins__Name\": \"A08-3\",\n              \"Bins__Code\": \"A08-3\",\n              \"Bins__Alias\": \"A08-3\",\n              \"Distance\": 35,\n              \"ExpDate\": 0,\n              \"Flag\": 0,\n              \"Item__Id\": 28051,\n              \"Item__Name\": \"Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN\",\n              \"Item__Code\": \"628450000038\",\n              \"Item__Alias\": \"Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Grey-NA-MONTEBELLO FLN\",\n              \"ItemCapacity\": 0,\n              \"Level\": 3,\n              \"MfgDate\": 0,\n              \"Quantity\": 12.0,\n              \"SkidId\": 41062,\n              \"Unit__Id\": 1,\n              \"Unit__Name\": \"PC\",\n              \"Unit__Code\": \"PC\",\n              \"Unit__Alias\": \"PC\"\n            }\n          ],\n          \"Skid\": 0,\n          \"DefaultStatus\": 0,\n          \"sRemarks\": \"\",\n          \"TransactionId\": 0\n        }\n      ],\n      \"Header\": {\n        \"DocNo\": \"\",\n        \"Date\": 132251905,\n        \"Time\": \"\",\n        \"sNarration\": \"\",\n        \"HeaderId\": 0\n      },\n      \"Footer\": []\n    }\n  ],\n  \"result\": 1,\n  \"message\": null,\n  \"url\": \"https://0812dce4.ngrok.io/8API/Screen/Transactions/Opening%20Stocks/2\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_7"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/Masters/Core__Account" : {
+      "get" : {
+        "tags" : [ "Masters" ],
+        "description" : "the method returns the masters list with field data from the “Account” tag.",
+        "parameters" : [ {
+          "name" : "fields",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "sCode%2CiStatus"
+        }, {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "UB+vNzB2kI0stV0HMVYOwpam9kIL1t3vDdFTBxSwoqY="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_8"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Transactions/Opening Stocks/{VoucherNo}" : {
+      "delete" : {
+        "tags" : [ "Transactions" ],
+        "description" : "For Delete the Voucher",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "lbMqgK25vHPk1cEI6rk7QqbJCX+7Hufv7+wu9TmcTV0="
+        }, {
+          "name" : "VoucherNo",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_9"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Masters/Core__TestMaster/{MasterCode}" : {
+      "delete" : {
+        "tags" : [ "Masters" ],
+        "description" : "For delete the Particular master",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "lbMqgK25vHPk1cEI6rk7QqbJCX+7Hufv7+wu9TmcTV0="
+        }, {
+          "name" : "MasterCode",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_9"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/Reports" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "description" : "To get the list of reports",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfull operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_10"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/Reports/ReportParameters/Stock Ledger" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "description" : "To get the ReportParameters",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_11"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Reports/ReportLayouts/Stock Ledger/0" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_12"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/Reports/pagedata" : {
+      "post" : {
+        "tags" : [ "Reports" ],
+        "description" : "To get the Report data",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0="
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_3"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"data\": [\n    {\n      \"StartingDate\": 132251905,\n      \"LanguageId\": 0,\n      \"Masters\": [\n        {\n          \"id\": 28053,\n          \"Name\": \"\"\n        }\n      ],\n      \"EndingDate\": 132318745,\n      \"LayoutId\": 9,\n      \"RowsPerPage\": 10,\n      \"CurrentPage\": 0,\n      \"ReportId\": \"551\",\n      \"Inputs\": [\n        {\n          \"id\": \"28053\",\n          \"value\": 0\n        }\n      ],\n      \"UniqueId\": \"\"\n    }\n  ]\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://0812dce4.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://0812dce4.ngrok.io"
+      } ]
+    },
+    "/8API/List/CreditManagement/DashboardDefinition/Description" : {
+      "get" : {
+        "tags" : [ "Dashboard" ],
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "hnnju2JcBL9tQd0kmLeLKKbJCX+7Hufv7+wu9TmcTV0="
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_13"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Screen/Transactions/VoucherTypes" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "To Get the all VoucherTypes",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_14"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Screen/Transactions/WareHouseStock/{Product}" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "Stock",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Product",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Screen/Transactions/Preferences" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "To get the all Transaction preferences",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_15"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Screen/Transactions/AccountLedgerBalance/Sales" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "AccountLedgerBalance",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_16"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Screen/Transactions/TransactionViews/Sales Orders" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "description" : "TransactionViews",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_17"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Screen/Transactions/Approvals/{VoucherType}" : {
+      "get" : {
+        "tags" : [ "Alerts & Approvals" ],
+        "description" : "Approvals",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "VoucherType",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_18"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://3cf66f1e.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://3cf66f1e.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Transactions/StopVouchers/Purchases Orders/{VoucherNo}" : {
+      "get" : {
+        "tags" : [ "Alerts & Approvals" ],
+        "description" : "StopVouchers",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "VoucherNo",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "Pass VoucherNo ex(PurOrd:5) or HeaderId"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_9"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://3cf66f1e.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://3cf66f1e.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Transactions/AlertApprovalCount" : {
+      "get" : {
+        "tags" : [ "Alerts & Approvals" ],
+        "description" : "AlertApprovalCount",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_19"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://3cf66f1e.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://3cf66f1e.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Transactions/Approvals" : {
+      "get" : {
+        "tags" : [ "Alerts & Approvals" ],
+        "description" : "Approvals",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_20"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server      "
+          }
+        },
+        "servers" : [ {
+          "url" : "https://3cf66f1e.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://3cf66f1e.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Transactions/RejectVouchers/Purchases Orders/{VoucherNo}" : {
+      "get" : {
+        "tags" : [ "Alerts & Approvals" ],
+        "description" : "RejectVouchers",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "VoucherNo",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_9"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://3cf66f1e.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://3cf66f1e.ngrok.io"
+      } ]
+    },
+    "/8API/Screen/Transactions/AuthorizeVouchers/Purchases Orders/PurOrd:5" : {
+      "get" : {
+        "tags" : [ "Alerts & Approvals" ],
+        "description" : "AuthorizeVouchers",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "VoucherNo",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_9"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://3cf66f1e.ngrok.io"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://3cf66f1e.ngrok.io"
+      } ]
+    },
+    "/8API/Transactions/Bins" : {
+      "post" : {
+        "tags" : [ "Transactions" ],
+        "description" : "Bins popup data",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_4"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"url\": \"\",\n  \"data\": [\n    {\n      \"Batch\": \"978\",\n      \"Product__Code\": \"628450000434\",\n      \"Product__Id\": 0,\n      \"BatchId\": 0,\n      \"AllocationTag\": \"17020197\",\n      \"Inward\": \"true\",\n      \"PalceItemInward\":\"1\"\n    }\n  ],\n  \"result\": 0,\n  \"message\": null\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_21"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server  "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Transactions/NewVoucherNumber" : {
+      "post" : {
+        "tags" : [ "Transactions" ],
+        "description" : "Generating the new voucher number for vouchertype",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_5"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"url\": \"\",\n  \"data\": [\n    {\n      \"VoucherType\":\"Sales Orders\"\n    }\n  ],\n  \"result\": 0,\n  \"message\": null\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_22"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Transactions/Batches" : {
+      "post" : {
+        "tags" : [ "Transactions" ],
+        "description" : "batch popup data",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_6"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"data\": [\n    {\n      \"voucherno\": \"2\",\n      \"product__code\": \"628450000434\",\n      \"invtagid\": \"2\",\n      \"voucherdate\": \"132318747\",\n      \"vouchertype\": \"RTS\",\n      \"BatchNo\":\"978\"\n    }\n  ],\n  \"url\": \"\",\n  \"result\": 1,\n  \"message\": null\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_23"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server "
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    },
+    "/8API/Transactions/OptionControlData" : {
+      "post" : {
+        "tags" : [ "Transactions" ],
+        "description" : "Option Control data",
+        "parameters" : [ {
+          "name" : "AccessToken",
+          "in" : "header",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_7"
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n  \"url\": \"\",\n  \"data\": [{\n \"iMasterTypeId\":\"2\"\n  }],\n  \"result\": 1,\n  \"message\": null\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_24"
+                },
+                "examples" : { }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden - Access to the resource by the provider is forbidden"
+          },
+          "404" : {
+            "description" : "Not found - The requested resource is not found"
+          },
+          "502" : {
+            "description" : "Provider server error - Something went wrong on the Provider or Endpoint’s server"
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost"
+      } ]
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "8APiUserlogin_data" : {
+        "type" : "object",
+        "properties" : {
+          "password" : {
+            "type" : "string"
+          },
+          "CompanyId" : {
+            "type" : "integer"
+          },
+          "Username" : {
+            "type" : "string"
+          },
+          "DeveloperId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APiUserlogin_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_data" : {
+        "type" : "object",
+        "properties" : {
+          "AccessToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_1_data" : {
+        "type" : "object",
+        "properties" : {
+          "VoucherType" : {
+            "type" : "string"
+          },
+          "VoucherOrder" : {
+            "type" : "string"
+          },
+          "Inventory" : {
+            "type" : "string"
+          },
+          "PostExchangeRateDiff" : {
+            "type" : "string"
+          },
+          "DefAcc__Code" : {
+            "type" : "string"
+          },
+          "MenuGroupId" : {
+            "type" : "string"
+          },
+          "InputExchangeRate" : {
+            "type" : "string"
+          },
+          "Abbr" : {
+            "type" : "string"
+          },
+          "LinkSeq" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_1_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_2_data" : {
+        "type" : "object",
+        "properties" : {
+          "iAccountType" : {
+            "type" : "integer"
+          },
+          "iDeliveryCity__Name" : {
+            "type" : "string"
+          },
+          "iCreatedDate" : {
+            "type" : "string"
+          },
+          "Alias" : {
+            "type" : "string"
+          },
+          "iStatus" : {
+            "type" : "integer"
+          },
+          "sCode" : {
+            "type" : "string"
+          },
+          "BinCapacity" : {
+            "type" : "integer"
+          },
+          "iPDCDiscountedAC__Name" : {
+            "type" : "string"
+          },
+          "sName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_2" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_2_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_3_data" : {
+        "type" : "object",
+        "properties" : {
+          "Suspended" : {
+            "type" : "boolean"
+          },
+          "Created time" : {
+            "type" : "string"
+          },
+          "Voucher No" : {
+            "type" : "string"
+          },
+          "Quantity" : {
+            "type" : "string"
+          },
+          "Date" : {
+            "type" : "string"
+          },
+          "HeaderId" : {
+            "type" : "integer"
+          },
+          "Created by" : {
+            "type" : "string"
+          },
+          "Modified time" : {
+            "type" : "string"
+          },
+          "Modified by" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_3" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_3_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_4_data" : {
+        "type" : "object",
+        "properties" : {
+          "APIMasterName" : {
+            "type" : "boolean"
+          },
+          "MasterTypeId" : {
+            "type" : "integer"
+          },
+          "Caption" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_4" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_4_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APIMastersCore__Warehouse_data" : {
+        "type" : "object",
+        "properties" : {
+          "sCode" : {
+            "type" : "string"
+          },
+          "Alias" : {
+            "type" : "string"
+          },
+          "sName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "body_1" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APIMastersCore__Warehouse_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_5_data" : {
+        "type" : "object",
+        "properties" : {
+          "MasterId" : {
+            "type" : "integer"
+          },
+          "VoucherNo" : {
+            "type" : "string"
+          },
+          "Exception" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_5" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_5_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_6_body" : {
+        "type" : "object",
+        "properties" : {
+          "Warehouse__Id" : {
+            "type" : "integer"
+          },
+          "Inventory Allocation Status__Name" : {
+            "type" : "string"
+          },
+          "Product__Id" : {
+            "type" : "integer"
+          },
+          "Description" : {
+            "type" : "string"
+          },
+          "Quantity" : {
+            "type" : "integer"
+          },
+          "Rate" : {
+            "type" : "integer"
+          },
+          "Gross" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_6_header" : {
+        "type" : "object",
+        "properties" : {
+          "DocNo" : {
+            "type" : "string"
+          },
+          "Date" : {
+            "type" : "integer"
+          },
+          "HeaderId" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_6_data" : {
+        "type" : "object",
+        "properties" : {
+          "body" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_6_body"
+            }
+          },
+          "header" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_6_header"
+            }
+          },
+          "Footer" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          }
+        }
+      },
+      "inline_response_200_6" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_6_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsOpening Stocks_Header" : {
+        "type" : "object",
+        "properties" : {
+          "HeaderId" : {
+            "type" : "integer"
+          },
+          "Time" : {
+            "type" : "string"
+          },
+          "sNarration" : {
+            "type" : "string"
+          },
+          "DocNo" : {
+            "type" : "string"
+          },
+          "Date" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "8APITransactionsOpening Stocks_Batch" : {
+        "type" : "object",
+        "properties" : {
+          "ResQuantity" : {
+            "type" : "number"
+          },
+          "BatchRate" : {
+            "type" : "number"
+          },
+          "FromReservation" : {
+            "type" : "boolean"
+          },
+          "BatchId" : {
+            "type" : "integer"
+          },
+          "Qty" : {
+            "type" : "number"
+          },
+          "InvTagId" : {
+            "type" : "integer"
+          },
+          "BatchNo" : {
+            "type" : "string"
+          },
+          "Value1" : {
+            "type" : "number"
+          },
+          "Value2" : {
+            "type" : "number"
+          },
+          "IReservationId" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "8APITransactionsOpening Stocks_Bins" : {
+        "type" : "object",
+        "properties" : {
+          "Item__Id" : {
+            "type" : "integer"
+          },
+          "MfgDate" : {
+            "type" : "integer"
+          },
+          "AllocTag" : {
+            "type" : "integer"
+          },
+          "Unit__Alias" : {
+            "type" : "string"
+          },
+          "BatchId" : {
+            "type" : "integer"
+          },
+          "Item__Code" : {
+            "type" : "string"
+          },
+          "Quantity" : {
+            "type" : "number"
+          },
+          "Item__Alias" : {
+            "type" : "string"
+          },
+          "Flag" : {
+            "type" : "integer"
+          },
+          "Unit__Id" : {
+            "type" : "integer"
+          },
+          "Bins__Alias" : {
+            "type" : "string"
+          },
+          "Item__Name" : {
+            "type" : "string"
+          },
+          "Batch" : {
+            "type" : "string"
+          },
+          "Bins__Id" : {
+            "type" : "integer"
+          },
+          "ExpDate" : {
+            "type" : "integer"
+          },
+          "ItemCapacity" : {
+            "type" : "integer"
+          },
+          "SkidId" : {
+            "type" : "integer"
+          },
+          "Level" : {
+            "type" : "integer"
+          },
+          "Unit__Name" : {
+            "type" : "string"
+          },
+          "Bins__Code" : {
+            "type" : "string"
+          },
+          "Bins__Name" : {
+            "type" : "string"
+          },
+          "Distance" : {
+            "type" : "integer"
+          },
+          "Unit__Code" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsOpening Stocks_Body" : {
+        "type" : "object",
+        "properties" : {
+          "Inventory Allocation Status__Id" : {
+            "type" : "integer"
+          },
+          "Description" : {
+            "type" : "string"
+          },
+          "Product__Alias" : {
+            "type" : "string"
+          },
+          "Unit__Alias" : {
+            "type" : "string"
+          },
+          "Product__Name" : {
+            "type" : "string"
+          },
+          "DefaultStatus" : {
+            "type" : "integer"
+          },
+          "Unit__Id" : {
+            "type" : "integer"
+          },
+          "Inventory Allocation Status__Name" : {
+            "type" : "string"
+          },
+          "Warehouse__Code" : {
+            "type" : "string"
+          },
+          "Batch" : {
+            "$ref" : "#/components/schemas/8APITransactionsOpening Stocks_Batch"
+          },
+          "Unit__Name" : {
+            "type" : "string"
+          },
+          "Inventory Allocation Status__Alias" : {
+            "type" : "string"
+          },
+          "Rate" : {
+            "type" : "number"
+          },
+          "Warehouse__Name" : {
+            "type" : "string"
+          },
+          "Quantity" : {
+            "type" : "number"
+          },
+          "Product__Id" : {
+            "type" : "integer"
+          },
+          "sRemarks" : {
+            "type" : "string"
+          },
+          "TransactionId" : {
+            "type" : "integer"
+          },
+          "Product__Code" : {
+            "type" : "string"
+          },
+          "Bins" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsOpening Stocks_Bins"
+            }
+          },
+          "Skid" : {
+            "type" : "integer"
+          },
+          "Warehouse__Id" : {
+            "type" : "integer"
+          },
+          "Warehouse__Alias" : {
+            "type" : "string"
+          },
+          "Gross" : {
+            "type" : "number"
+          },
+          "Inventory Allocation Status__Code" : {
+            "type" : "string"
+          },
+          "Unit__Code" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsOpening Stocks_data" : {
+        "type" : "object",
+        "properties" : {
+          "Header" : {
+            "$ref" : "#/components/schemas/8APITransactionsOpening Stocks_Header"
+          },
+          "Footer" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "Body" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsOpening Stocks_Body"
+            }
+          }
+        }
+      },
+      "body_2" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsOpening Stocks_data"
+            }
+          },
+          "message" : { },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_7_data" : {
+        "type" : "object",
+        "properties" : {
+          "HeaderId" : {
+            "type" : "integer"
+          },
+          "VoucherNo" : {
+            "type" : "string"
+          },
+          "BodyIds" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "TransIds" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "Errors" : {
+            "type" : "string"
+          },
+          "Posted" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "inline_response_200_7" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_7_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_8_data" : {
+        "type" : "object",
+        "properties" : {
+          "sCode" : {
+            "type" : "string"
+          },
+          "iStatus" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_8" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_8_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_9" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_10_data" : {
+        "type" : "object",
+        "properties" : {
+          "ReportName" : {
+            "type" : "string"
+          },
+          "ReportId" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_10" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_10_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_11_Parameters" : {
+        "type" : "object",
+        "properties" : {
+          "FieldVariable" : {
+            "type" : "string"
+          },
+          "ControlId" : {
+            "type" : "integer"
+          },
+          "SubParentId" : {
+            "type" : "integer"
+          },
+          "IsDefualt" : {
+            "type" : "integer"
+          },
+          "FieldId" : {
+            "type" : "string"
+          },
+          "FieldName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_11_LayoutDtls" : {
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "integer"
+          },
+          "Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_11_data" : {
+        "type" : "object",
+        "properties" : {
+          "ReportId" : {
+            "type" : "integer"
+          },
+          "LinkId" : {
+            "type" : "integer"
+          },
+          "ReportModule" : {
+            "type" : "integer"
+          },
+          "ReportType" : {
+            "type" : "integer"
+          },
+          "ReportName" : {
+            "type" : "string"
+          },
+          "SourceType" : {
+            "type" : "integer"
+          },
+          "Parameters" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_11_Parameters"
+            }
+          },
+          "LayoutDtls" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_11_LayoutDtls"
+            }
+          }
+        }
+      },
+      "inline_response_200_11" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_11_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_12_data" : {
+        "type" : "object",
+        "properties" : {
+          "Tag" : {
+            "type" : "integer"
+          },
+          "ID" : {
+            "type" : "integer"
+          },
+          "Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_12" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_12_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APIReportspagedata_Masters" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APIReportspagedata_Inputs" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "value" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "8APIReportspagedata_data" : {
+        "type" : "object",
+        "properties" : {
+          "StartingDate" : {
+            "type" : "integer"
+          },
+          "Masters" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APIReportspagedata_Masters"
+            }
+          },
+          "UniqueId" : {
+            "type" : "string"
+          },
+          "EndingDate" : {
+            "type" : "integer"
+          },
+          "CurrentPage" : {
+            "type" : "integer"
+          },
+          "LayoutId" : {
+            "type" : "integer"
+          },
+          "ReportId" : {
+            "type" : "string"
+          },
+          "RowsPerPage" : {
+            "type" : "integer"
+          },
+          "Inputs" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APIReportspagedata_Inputs"
+            }
+          },
+          "LanguageId" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "body_3" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APIReportspagedata_data"
+            }
+          }
+        }
+      },
+      "inline_response_200_13_data" : {
+        "type" : "object",
+        "properties" : {
+          "Active" : {
+            "type" : "string"
+          },
+          "Description" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "UserOrRoleId" : {
+            "type" : "string"
+          },
+          "UserId" : {
+            "type" : "string"
+          },
+          "Default" : {
+            "type" : "string"
+          },
+          "FontHeader" : {
+            "type" : "string"
+          },
+          "DashboardId" : {
+            "type" : "string"
+          },
+          "SetAsDefault" : {
+            "type" : "string"
+          },
+          "FontFooter" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_13" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_13_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_14_data" : {
+        "type" : "object",
+        "properties" : {
+          "PostExchangeRateDiff" : {
+            "type" : "boolean"
+          },
+          "BatchPick" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Inventory" : {
+            "type" : "boolean"
+          },
+          "DetailedPosting" : {
+            "type" : "boolean"
+          },
+          "VoucherType" : {
+            "type" : "integer"
+          },
+          "UpdateInvCanBeChanged" : {
+            "type" : "boolean"
+          },
+          "CostOfIssueAcc" : {
+            "type" : "string"
+          },
+          "PostVAT" : {
+            "type" : "string"
+          },
+          "RateFormulaBehaviour" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_14" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_14_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_15_DefCurrency" : {
+        "type" : "object",
+        "properties" : {
+          "CurrencyId" : {
+            "type" : "integer"
+          },
+          "RoundingType" : {
+            "type" : "integer"
+          },
+          "NoofDecimals" : {
+            "type" : "integer"
+          },
+          "Symbol" : {
+            "type" : "string"
+          },
+          "GeneralRoundOff" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_15_data" : {
+        "type" : "object",
+        "properties" : {
+          "CheckNegativeStockAction" : {
+            "type" : "integer"
+          },
+          "SellingRate" : {
+            "type" : "integer"
+          },
+          "FaTagId" : {
+            "type" : "integer"
+          },
+          "InvTagId" : {
+            "type" : "integer"
+          },
+          "CheckOverdueBillsAction" : {
+            "type" : "integer"
+          },
+          "CheckReorderAction" : {
+            "type" : "integer"
+          },
+          "DefCurrency" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_15_DefCurrency"
+            }
+          }
+        }
+      },
+      "inline_response_200_15" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_15_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_16_data" : {
+        "type" : "object",
+        "properties" : {
+          "Credit" : {
+            "type" : "integer"
+          },
+          "Debit" : {
+            "type" : "integer"
+          },
+          "OpeningBalance" : {
+            "type" : "integer"
+          },
+          "Balance" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_16" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_16_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_17_data" : {
+        "type" : "object",
+        "properties" : {
+          "View__ID" : {
+            "type" : "integer"
+          },
+          "View__Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_17" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_17_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_18_data" : {
+        "type" : "object",
+        "properties" : {
+          "Index" : {
+            "type" : "integer"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Purpose" : {
+            "type" : "integer"
+          },
+          "Code" : {
+            "type" : "string"
+          },
+          "CreatedDateTime" : {
+            "type" : "string"
+          },
+          "DateTime" : {
+            "type" : "string"
+          },
+          "ScreenId" : {
+            "type" : "integer"
+          },
+          "Status" : {
+            "type" : "integer"
+          },
+          "AlertId" : {
+            "type" : "integer"
+          },
+          "ModuleId" : {
+            "type" : "integer"
+          },
+          "Snooze" : {
+            "type" : "string"
+          },
+          "RecordId" : {
+            "type" : "integer"
+          },
+          "Message" : {
+            "type" : "string"
+          },
+          "Params" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_18" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_18_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_19_data" : {
+        "type" : "object",
+        "properties" : {
+          "AlertsCount" : {
+            "type" : "integer"
+          },
+          "ApprovalsCount" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_19" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_19_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_20_data" : {
+        "type" : "object",
+        "properties" : {
+          "ModuleId" : {
+            "type" : "integer"
+          },
+          "ScreenId" : {
+            "type" : "integer"
+          },
+          "AlertPurpose" : {
+            "type" : "string"
+          },
+          "Count" : {
+            "type" : "integer"
+          },
+          "ScreenName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_20" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_20_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsBins_data" : {
+        "type" : "object",
+        "properties" : {
+          "Product__Code" : {
+            "type" : "string"
+          },
+          "Batch" : {
+            "type" : "string"
+          },
+          "Inward" : {
+            "type" : "string"
+          },
+          "PalceItemInward" : {
+            "type" : "string"
+          },
+          "BatchId" : {
+            "type" : "integer"
+          },
+          "AllocationTag" : {
+            "type" : "string"
+          },
+          "Product__Id" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "body_4" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsBins_data"
+            }
+          },
+          "message" : { },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_21_BinsDetails" : {
+        "type" : "object",
+        "properties" : {
+          "Distance" : {
+            "type" : "integer"
+          },
+          "Id" : {
+            "type" : "integer"
+          },
+          "FreeSpace" : {
+            "type" : "integer"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Group" : {
+            "type" : "integer"
+          },
+          "Quantity" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_21_ProductData" : {
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "integer"
+          },
+          "Category" : {
+            "type" : "integer"
+          },
+          "BinCapacity" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_21_data" : {
+        "type" : "object",
+        "properties" : {
+          "BinsDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_21_BinsDetails"
+            }
+          },
+          "ProductData" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_21_ProductData"
+            }
+          }
+        }
+      },
+      "inline_response_200_21" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_21_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsNewVoucherNumber_data" : {
+        "type" : "object",
+        "properties" : {
+          "VoucherType" : {
+            "type" : "string"
+          }
+        }
+      },
+      "body_5" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsNewVoucherNumber_data"
+            }
+          },
+          "message" : { },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_22_data" : {
+        "type" : "object",
+        "properties" : {
+          "NewVoucherNumber" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_22" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_22_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsBatches_data" : {
+        "type" : "object",
+        "properties" : {
+          "voucherno" : {
+            "type" : "string"
+          },
+          "invtagid" : {
+            "type" : "string"
+          },
+          "vouchertype" : {
+            "type" : "string"
+          },
+          "product__code" : {
+            "type" : "string"
+          },
+          "voucherdate" : {
+            "type" : "string"
+          },
+          "BatchNo" : {
+            "type" : "string"
+          }
+        }
+      },
+      "body_6" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsBatches_data"
+            }
+          },
+          "message" : { },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_23_Batches" : {
+        "type" : "object",
+        "properties" : {
+          "BatchId" : {
+            "type" : "integer"
+          },
+          "IsBatchExists" : {
+            "type" : "boolean"
+          },
+          "ExpiryDate" : {
+            "type" : "integer"
+          },
+          "BatchQuntity" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "inline_response_200_23_data" : {
+        "type" : "object",
+        "properties" : {
+          "Batches" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_23_Batches"
+            }
+          }
+        }
+      },
+      "inline_response_200_23" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_23_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "8APITransactionsOptionControlData_data" : {
+        "type" : "object",
+        "properties" : {
+          "iMasterTypeId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "body_7" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/8APITransactionsOptionControlData_data"
+            }
+          },
+          "message" : { },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_24_data" : {
+        "type" : "object",
+        "properties" : {
+          "header" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "format" : "string",
+              "example" : "[\"iMasterId\",\"Code^92\",\"Name^101\",\"ProductType^100\",\"MasterId^100\"]"
+            }
+          },
+          "Body" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "[28047,628450000014,\"Sheet Set-1000TC-EGY/CT/SD-Dbl/Full-Assorted-NA-MONTEBELLO FLN\",4,28047]"
+            }
+          }
+        }
+      },
+      "inline_response_200_24" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "integer"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_24_data"
+            }
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
